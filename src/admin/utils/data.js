@@ -1,21 +1,19 @@
-import { gridIcon, masonryIcon, sliderIcon, tickerIcon } from '../../utils/icons';
+import { gridIcon } from '../../utils/icons';
 
 const slug = 'click-to-copy';
 
 export const dashboardInfo = (info) => {
-	const { version, isPremium, hasPro, licenseActiveNonce, nonce, adminUrl, deleteDataOnUninstall, uninstallNonce } = info;
+	const { version,licenseActiveNonce, nonce, adminUrl, deleteDataOnUninstall, uninstallNonce } = info;
 
-	const proSuffix = isPremium ? ' Pro' : '';
+
 
 	return {
-    name: `Click To Copy  ${proSuffix}`,
-    displayName: `Click To Copy  ${proSuffix} Copy Text or Code to Clipboard Instantly`,
+    name: `Click To Copy`,
+    displayName: `Click To Copy Copy Text or Code to Clipboard Instantly`,
     description:
       "The Click To Copy Block plugin allows users to easily copy text or code snippets with a single click, enhancing engagement and simplifying content sharing on your WordPress site .",
     slug,
     version,
-    isPremium,
-    hasPro,
     displayOurPlugins: true,
     media: {
       logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,

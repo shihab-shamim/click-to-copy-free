@@ -8,8 +8,6 @@ import Settings from './Settings/Settings';
 import { tabController } from '../../../../bpl-tools/utils/functions';
 import Style from '../Common/Style';
 import Forms from '../../Forms';
-import ProForms from '../Common/ProForms/ProForms';
-import { BControlPro } from '../../../../bpl-tools/ProControls';
 import ClipBoard from './ClipBoard';
 
 
@@ -20,9 +18,8 @@ const Edit = props => {
     const divRef = useRef(null);
 
     const { forms, input } = attributes;
-    const  isPremium  = Boolean(ctcbpipecheck ?? false);
-    const [isProModalOpen, setIsProModalOpen] = useState(false);
-    const premiumProps = { isPremium, setIsProModalOpen };
+
+  
 
      const shortcode = `[ctc id=${currentPostId}]`;
         
@@ -36,9 +33,6 @@ const Edit = props => {
 
     const InputEl = <RichText tagName="div" ref={divRef} className='text' value={(forms === "form1" && copied) ? __("Copied", "clipboard") : input?.offerContent} onChange={val => setAttributes({ input: { ...input, offerContent: val } })} placeholder='Input your content' />
 
-       const labelElPro = <BControlPro Component={RichText}  {...premiumProps} tagName="div" className='proLabel' value={input?.label} onChange={val => setAttributes({ input: { ...input, label: val } })} placeholder='Title Here' inlineToolbar />
-
-    const InputElPro = <BControlPro Component={RichText}  {...premiumProps} tagName="span" ref={divRef} className='proInputContent' value={ input?.offerContent} onChange={val => setAttributes({ input: { ...input, offerContent: val } })} placeholder='Input your content' />
 
 
     const id = `ctcb_click_to_copy_block-${clientId}`;
@@ -54,7 +48,7 @@ const Edit = props => {
     }
 
     return <>
-        <Settings attributes={attributes} setAttributes={setAttributes} clientId={clientId} device={device}  isProModalOpen={isProModalOpen} setIsProModalOpen={setIsProModalOpen} isPremium={isPremium} />
+        <Settings attributes={attributes} setAttributes={setAttributes} clientId={clientId} device={device}   />
 
         
         <div {...useBlockProps()} id={id}>
@@ -62,7 +56,7 @@ const Edit = props => {
         {  CPTType === "ctc" && <ClipBoard shortCode={shortcode} />}
 
 
-            {["default","form1","form2","form3","form4"].includes(attributes?.forms) ? <Forms {...formsProps} /> :<ProForms isEditor={true} labelElPro={labelElPro} InputElPro={InputElPro} attributes={attributes} setAttributes={setAttributes} /> }
+            <Forms {...formsProps} /> 
            
         </div>
     </>;

@@ -10,8 +10,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
  * Plugin URI: https://wordpress.org/plugins/click-to-copy/
  * Text Domain:       clipboard
- * @fs_premium_only   /freemius
- * @fs_free_only      /freemius-lite
+ * @fs_free_only      /vendor/freemius-lite
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -27,7 +26,7 @@ if (function_exists('ctc_fs')) {
     define('CTC_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
     define('CTC_DIR_PATH', plugin_dir_path(__FILE__));
     define('CTC_HAS_FREE', 'click-to-copy/click-to-copy-block.php' === plugin_basename(__FILE__));
-    define('CTC_HAS_PRO', 'click-to-copy-pro/click-to-copy-block.php' === plugin_basename(__FILE__));
+    // define('CTC_HAS_PRO', 'click-to-copy-pro/click-to-copy-block.php' === plugin_basename(__FILE__));
 
 
     // Freemius Code
@@ -37,15 +36,13 @@ if (function_exists('ctc_fs')) {
             global $ctc_fs;
 
             if (! isset($ctc_fs)) {
-                $fsStartPath = dirname(__FILE__) . '/freemius/start.php';
-                $bSDKInitPath = dirname(__FILE__) . '/freemius-lite/start.php';
+                
+                $bSDKInitPath = dirname(__FILE__) . '/vendor/freemius-lite/start.php';
 
 
-                if (CTC_HAS_PRO && file_exists($fsStartPath)) {
-                    require_once $fsStartPath;
-                } else if (CTC_HAS_FREE && file_exists($bSDKInitPath)) {
+              
                     require_once $bSDKInitPath;
-                }
+                
 
                 $bptbConfig = [
                     'id'                  => '20412',
@@ -53,7 +50,7 @@ if (function_exists('ctc_fs')) {
                     'premium_slug'        => 'click-to-copy-pro',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_06363f5cbf7f2bdba1337af3d5f8d',
-                    'is_premium'          => true,
+                    'is_premium'          => false,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,
@@ -62,24 +59,18 @@ if (function_exists('ctc_fs')) {
                         'days'               => 7,
                         'is_require_payment' => false,
                     ],
-                     'menu' => CTC_HAS_PRO ? 
-                    array(
-                        'slug'        => 'click-to-copy-dashboard',
-                        'first-path'  =>  'admin.php?page=click-to-copy-dashboard#/welcome',
-                        'support'     => false,
-                    )
-                    : array(
+                     'menu' =>  array(
                         'slug'           => 'click-to-copy-dashboard',
-                        'first-path'     => 'tools.php?page=click-to-copy-dashboard#/welcome',
+                        'first-path'     => 'admin.php?page=click-to-copy-dashboard#/welcome',
                         'support'        => false,
                         'parent'         => array(
-                            'slug' => 'tools.php',
+                            'slug' => 'admin.php',
                         ),
                     ),
                 ];
 
 
-                $ctc_fs = (CTC_HAS_PRO && file_exists($fsStartPath)) ? fs_dynamic_init($bptbConfig) : fs_lite_dynamic_init($bptbConfig);
+                $ctc_fs = fs_lite_dynamic_init($bptbConfig);
             }
 
             return $ctc_fs;
@@ -92,22 +83,14 @@ if (function_exists('ctc_fs')) {
     }
 
     // Main Plugin Logic...
-    function bpctcPremiumChecker() {
-        return CTC_HAS_PRO ? ctc_fs()->can_use_premium_code() : false;
-    }
+  
 
-    if( CTC_HAS_PRO && bpctcPremiumChecker() ) {
-		require_once CTC_DIR_PATH . '/inc/ShortCode.php';
-        require_once CTC_DIR_PATH . '/inc/ProAdminMenu.php';
 
-	}else{
         require_once CTC_DIR_PATH . '/inc/AdminMenu.php';
+        require_once CTC_DIR_PATH . '/inc/ShortCode.php';
 
-    }
-       if(CTC_HAS_PRO){
-        require_once CTC_DIR_PATH . 'inc/LicenseActivation.php';
+    
 
-        }
 
 
 
@@ -118,7 +101,6 @@ if (function_exists('ctc_fs')) {
                 add_action('init', [$this, 'onInit']);
                 add_action('admin_init', [$this, 'registerSettings']);
                 add_action('rest_api_init', [$this, 'registerSettings']);
-                add_action( 'enqueue_block_editor_assets', [$this, 'ctcEnqueueBlockEditorAssets'] );
                 add_action( 'wp_ajax_ctcSaveUninstallOption', [$this, 'ctcSaveUninstallOption'] );
                 add_filter( 'default_title', [$this, 'defaultTitle'], 10, 2 );
 			  add_filter( 'default_content', [$this, 'defaultContent'], 10, 2 );
@@ -142,9 +124,7 @@ if (function_exists('ctc_fs')) {
                 );
             }
 
-            function ctcEnqueueBlockEditorAssets(){
-                wp_add_inline_script( 'ctcb-click-to-copy-editor-script', 'const ctcbpipecheck =  ' . wp_json_encode( bpctcPremiumChecker() ) .';', 'before' );
-            }
+         
          
             // Register plugin settings
             public function registerSettings() {

@@ -11,17 +11,7 @@ const options = {
 		{ label: __('Theme-3', 'mail-collections'), value: 'form3' },
 		{ label: __('Theme-4', 'mail-collections'), value: 'form4' },
 		{ label: __('Theme-5', 'mail-collections'), value: 'form5' }
-		,
-		{ label: __('Theme-6', 'mail-collections'), value: 'form6' },
-		{ label: __('Theme-7', 'mail-collections'), value: 'form7' },
-		{ label: __('Theme-8', 'mail-collections'), value: 'form8' },
-		{ label: __('Theme-9', 'mail-collections'), value: 'form9' },
-		{ label: __('Theme-10', 'mail-collections'), value: 'form10' },
-		{ label: __('Theme-11', 'mail-collections'), value: 'form11' },
-		{ label: __('Theme-12', 'mail-collections'), value: 'form12' },
-		{ label: __('Theme-13', 'mail-collections'), value: 'form13' },
-		{ label: __('Theme-14', 'mail-collections'), value: 'form14' },
-		{ label: __('Theme-15', 'mail-collections'), value: 'form15' },
+		
 		
 	],
 

@@ -4,7 +4,6 @@
 		import Forms from "./Forms";
 		import { createRoot } from "react-dom/client";
 		import "./style.scss";
-		import ProForms from "./Components/Common/ProForms/ProForms";
 
 		document.addEventListener("DOMContentLoaded", () => {
 		const clickToCopyEles = document.querySelectorAll(
@@ -41,18 +40,7 @@
 			)}
 			</div>
 		);
-		const labelElPro = (
-			<div
-			className="proLabel"
-			dangerouslySetInnerHTML={{ __html: input?.label }}
-			/>
-		);
-		const InputElPro = (
-			<span
-			className="proInputContent"
-			dangerouslySetInnerHTML={{ __html: input?.offerContent }}
-			></span>
-		);
+
 		const formsProps = {
 			attributes,
 			labelEl,
@@ -65,19 +53,9 @@
 		return (
 			<>
 			<Style attributes={attributes} EleId={clickToCopyEle.id} />
-			{["default", "form1", "form2", "form3", "form4"].includes(
-				attributes?.forms
-			) ? (
+			
 				<Forms {...formsProps} />
-			) : (
-				<ProForms
-				isEditor={false}
-				labelElPro={labelElPro}
-				InputElPro={InputElPro}
-				attributes={attributes}
-				pipeCheck={Boolean(clickToCopyEle.dataset.pipecheck ?? false)}
-				/>
-			)}
+			
 			</>
 		);
 		};

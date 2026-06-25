@@ -718,63 +718,7 @@
       height: "auto",
       width: "160px",
       isPro:false
-    },
-    {
-      label: "Theme-5",
-      value: "form5",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme5.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    },
-    {
-      label: "Theme-6",
-      value: "form6",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme6.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    }
-    ,
-    {
-      label: "Theme-7",
-      value: "form7",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme7.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    }   ,
-    {
-      label: "Theme-8",
-      value: "form8",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme8.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    }   ,
-    {
-      label: "Theme-9",
-      value: "form9",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme9.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    }
-       ,
-    {
-      label: "Theme-10",
-      value: "form10",
-      img: "https://templates.bplugins.com/wp-content/uploads/2025/09/clicktocopytheme10.png",
-      height: "auto",
-      width: "160px",
-      isPro:true
-      
-    }   
+    } 
     
   ];
   

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Popover } from "@wordpress/components";
 import "./style.scss";
-const BlockPreview = ({ options, value, onChange, isPremium }) => {
+const BlockPreview = ({ options, value, onChange, }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const handleButtonClick = (blockValue, idx) => {
     onChange(blockValue);
@@ -25,18 +25,11 @@ const BlockPreview = ({ options, value, onChange, isPremium }) => {
                 value === theme.value ? "bPl-activeBtn" : ""
               }`}
               onClick={() => handleButtonClick(theme.value, idx, theme.content)}
-              onMouseEnter={() => handleMouseInteraction(idx, true)}
-              onMouseLeave={() => handleMouseInteraction(idx, false)}
+              // onMouseEnter={() => handleMouseInteraction(idx, true)}
+              // onMouseLeave={() => handleMouseInteraction(idx, false)}
             >
               <span className="bplOpacity75">{theme.label}</span>
-              {theme?.isPro && !isPremium && (
-                <span
-                  className={`labelPro 
- ${value === theme.value ? "labelProActive" : ""}`}
-                >
-                  Pro
-                </span>
-              )}
+              
             </Button>
           </div>
           {activeIndex === idx && (
