@@ -1,9 +1,9 @@
 		import { __ } from '@wordpress/i18n';
 
-		import { getBorderCSS, getTypoCSS, getColorsCSS, getBackgroundCSS, getBoxCSS, getMultiShadowCSS } from '../../../../bpl-tools/utils/getCSS';
+		import { getBorderCSS, getTypoCSS, getColorsCSS} from '../../../../bpl-tools/utils/getCSS';
 
 		import { defaulStyle, getBoxValue } from '../../utils/functions';
-		import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
+
 
 		const Style = ({ attributes, EleId }) => {
 
@@ -15,39 +15,7 @@
 			const parentElementForm3 = `${mainEle} .form3`;
 			const parentElementForm4 = `${mainEle} .form4`;
 
-			
-
-			const proFormMainWapperSl = `${mainEle} .proFormMainWapper`;
-			const proFormWrapperSl = `${proFormMainWapperSl} .proFormWrapper`;
-			const proLabelsl = `${proFormWrapperSl} .proLabel`;
-			const proBtnsl = `${proFormWrapperSl} .proBtn`;
-			const proSymbleIconl = `${proBtnsl} .proSymbleIcon`;
-			const proCopyIconsl = `${proBtnsl} .proCopyIcon`;
-			const proInputContentSl = `${proBtnsl} .proInputContent`;
-
-			
-
-		function getAlignmentCSS(align) {
-  const { top = "0", right = "0", bottom = "0", left = "0" } = styles?.input?.margin;
-
-  let marginString = `margin: ${top} ${right} ${bottom} ${left};`;
-
-  switch (align) {
-    case "left":
-      marginString = `margin: ${top} auto ${bottom} ${left};`;
-      break;
-    case "right":
-      marginString = `margin: ${top} ${right} ${bottom} auto;`;
-      break;
-    case "center":
-      marginString = `margin: ${top} auto ${bottom} auto;`;
-      break;
-    default:
-      break;
-  }
-
-  return marginString;
-}
+		
 
 
 
@@ -62,10 +30,10 @@
 				${getTypoCSS(`${parentElementForm4} .hoverContent`, hoverContent?.typo)?.styles}
 				${getTypoCSS(`${parentElementForm4} .content .text`, inputTypo)?.styles}
 				${getTypoCSS(`${parentElement} .inputForm .text`, inputTypo)?.styles}
-				${getTypoCSS(proInputContentSl, inputTypo)?.styles}
+				
 				${getTypoCSS(`${parentElement} .inputForm .label`, labelTypo)?.styles}
 				${getTypoCSS(`${parentElement} .inputForm .subBtn .btnText `, btnTypo)?.styles}
-				${getTypoCSS(proLabelsl, labelTypo)?.styles}
+				
 
 				${parentElement} .inputForm .label {
 					color:${labelColor};
@@ -134,64 +102,7 @@
 				${parentElementForm4} .hoverContent {
 					${getColorsCSS(hoverContent?.colors)};
 				}
-					${proSymbleIconl} svg{
-					fill:${styles?.icon?.color};
-					color:${styles?.icon?.color};
-					width:${styles?.icon?.size}px;
-					height:${styles?.icon?.size}px;
-					}
-					${proCopyIconsl} svg{
-					fill:${styles?.icon?.color};
-					color:${styles?.icon?.color};
-					width:${styles?.icon?.size}px;
-					height:${styles?.icon?.size}px;
-					}
-
-					${proFormMainWapperSl}{
-					${getBackgroundCSS(styles?.bg)} 
-					padding:${getBoxCSS(styles?.padding?.desktop)};
-					margin:${getBoxCSS(styles?.margin?.desktop)};
-
 					
-					}
-				
-					${proLabelsl}{
-					color:${labelColor};
-					margin:${getBoxCSS(styles?.label?.margin)};
-					}
-					${proBtnsl}{
-					${getColorsCSS(inputColors)}
-					${getAlignmentCSS(styles?.input?.alignment)}
-					padding:${getBoxCSS(inputPadding)};
-					border:${styles?.input?.border?.width} ${styles?.input?.border?.style} ${styles?.input?.border?.color};
-					border-radius:${getBoxCSS(styles?.input?.radius)};
-					box-shadow:${getMultiShadowCSS(styles?.input?.shadow)};
-					
-					}
-					${proBtnsl}:hover{
-					border:${styles?.input?.hoverBorder?.width} ${styles?.input?.hoverBorder?.style} ${styles?.input?.hoverBorder?.color};
-					box-shadow:${getMultiShadowCSS(styles?.input?.hoverShadow)};
-					
-
-					}
-					
-
-					${proInputContentSl}{
-					margin:${getBoxCSS(styles?.input?.text?.margin)};
-					}
-
-					${tabBreakpoint}{
-						${proFormMainWapperSl}{
-						padding:${getBoxCSS(styles?.padding?.tablet)};
-						margin:${getBoxCSS(styles?.margin?.tablet)};
-						}
-					}
-				${mobileBreakpoint}{
-						${proFormMainWapperSl}{
-						padding:${getBoxCSS(styles?.padding?.mobile)};
-						margin:${getBoxCSS(styles?.margin?.mobile)};
-						}
-					}
 
 
 

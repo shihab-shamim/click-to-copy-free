@@ -1,77 +1,82 @@
-import { useEffect } from "@wordpress/element";
+  import { useEffect } from "@wordpress/element";
 
-import { BlockControls, InspectorControls } from "@wordpress/block-editor";
-import { TabPanel } from "@wordpress/components";
+  import { BlockControls, InspectorControls } from "@wordpress/block-editor";
+  import { TabPanel } from "@wordpress/components";
 
-import {
-  tabController,
-  checkForm,
-  toolTipPresets,
-} from "../../../utils/functions";
-import options from "../../../utils/options";
-import icons from "../../../utils/icons";
-import Genarel from "./Genaral/Genarel";
-import Style from "./Style/Style";
-import BlockPreview from "./panel/BlockPreview ";
-const { generalStyleTabs } = options;
+  import {
+    tabController,
+    checkForm,
+    toolTipPresets,
+  } from "../../../utils/functions";
+  import options from "../../../utils/options";
+  import icons from "../../../utils/icons";
+  import Genarel from "./Genaral/Genarel";
+  import Style from "./Style/Style";
+  import BlockPreview from "./panel/BlockPreview ";
+  import { BBlocksAds } from "../../../../../bpl-tools/Components";
+  const { generalStyleTabs } = options;
 
-const Settings = ({
-  attributes,
-  setAttributes,
-  device,
+  const Settings = ({
+    attributes,
+    setAttributes,
+    device,
 
-}) => {
-  const { btnIcon, forms } = attributes;
+  }) => {
+    const { btnIcon, forms } = attributes;
 
-  
+    
 
-  useEffect(() => {
-    icons?.iconCopy(btnIcon.size);
-    icons?.iconCopy(btnIcon.color);
-  }, [btnIcon]);
+    useEffect(() => {
+      icons?.iconCopy(btnIcon.size);
+      icons?.iconCopy(btnIcon.color);
+    }, [btnIcon]);
 
-  return (
-    <>
-      <InspectorControls>
-        <TabPanel
-          className="bPlTabPanel"
-          activeClass="activeTab"
-          tabs={generalStyleTabs}
-          onSelect={() => tabController()}
-        >
-          {(tab) => (
-            <>
-              {"general" === tab.name && (
-                <Genarel
-                  attributes={attributes}
-                  setAttributes={setAttributes}
-                  device={device}
-              
-                />
-              )}
+    return (
+      <>
+        <InspectorControls>
+            <div className='bPlInspectorInfo'>
+            <BBlocksAds/>
+          </div>
 
-              {"style" === tab.name && (
-                <Style
-                  attributes={attributes}
-                  setAttributes={setAttributes}
-                  device={device}
-                  
-                />
-              )}
-            </>
-          )}
-        </TabPanel>
-      </InspectorControls>
-      <BlockControls>
-        <BlockPreview
-          options={toolTipPresets}
+          <TabPanel
+            className="bPlTabPanel"
+            activeClass="activeTab"
+            tabs={generalStyleTabs}
+            onSelect={() => tabController()}
+          >
+            {(tab) => (
+              <>
+                {"general" === tab.name && (
+                  <Genarel
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                    device={device}
+                
+                  />
+                )}
 
-          value={forms}
-          onChange={(val) => {setAttributes({ forms: val, ...checkForm(val) }) }}
-        />
-      </BlockControls>
+                {"style" === tab.name && (
+                  <Style
+                    attributes={attributes}
+                    setAttributes={setAttributes}
+                    device={device}
+                    
+                  />
+                )}
+              </>
+            )}
+          </TabPanel>
+        </InspectorControls>
+        <BlockControls>
+          <BlockPreview
+            options={toolTipPresets}
 
-    </>
-  );
-};
-export default Settings;
+            value={forms}
+            onChange={(val) => {setAttributes({ forms: val, ...checkForm(val) }) }}
+          />
+        </BlockControls>
+
+      </>
+    );
+  };
+  export default Settings;

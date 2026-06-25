@@ -229,35 +229,7 @@ input:focus {
 	}
 	
     
-    .proBtn {
-      display: flex;
-    //   align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: 0.2s;
-      border: none;
-      outline: none;
-	  position: relative;
-	  text-align: left;
-    }
-   
-  
-	.proSymbleIcon ,.proCopyIcon{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	
-.proCopyIcon {
-  position: absolute;
-  top: 0;   /* উপরে থেকে gap */
-  right: 0; /* ডান থেকে gap */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  padding: 10px;
-}
+
 
 
 }
