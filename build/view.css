@@ -1,0 +1,199 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+.dashicons {
+  font-family: dashicons !important;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.wp-block-ctcb-click-to-copy * {
+  box-sizing: border-box;
+}
+.wp-block-ctcb-click-to-copy .form .copyText {
+  margin-top: 15px;
+}
+.wp-block-ctcb-click-to-copy .form .copyText .text {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.wp-block-ctcb-click-to-copy .form .copyText .text:focus {
+  box-shadow: unset;
+}
+.wp-block-ctcb-click-to-copy .form .copyText button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText {
+  position: relative;
+  background: #fff;
+  display: flex;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText .subBtn {
+  display: flex;
+  align-items: center;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText .subBtn :active {
+  background: #809ce2;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText .subBtn::before {
+  position: absolute;
+  top: -45px;
+  right: 0px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 113%;
+  display: none;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText .subBtn::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  display: none;
+}
+.wp-block-ctcb-click-to-copy .form.default .copyText.active .subBtn::before,
+.wp-block-ctcb-click-to-copy .form.default .copyText.active .subBtn::after {
+  display: block;
+}
+.wp-block-ctcb-click-to-copy .form.form1 .copyText {
+  position: relative;
+  display: flex;
+}
+.wp-block-ctcb-click-to-copy .form.form1 .copyText:hover {
+  opacity: 0.3;
+}
+.wp-block-ctcb-click-to-copy .form.form1 .copyText .subBtn {
+  display: flex;
+  align-items: center;
+}
+.wp-block-ctcb-click-to-copy .form.form1 .copyText .text {
+  text-align: center;
+}
+.wp-block-ctcb-click-to-copy .form.form1 .copyText.active {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.wp-block-ctcb-click-to-copy .form.form2 .copyText {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.wp-block-ctcb-click-to-copy .form.form2 .copyText .text {
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.wp-block-ctcb-click-to-copy .form.form2 .copyText .subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-block-ctcb-click-to-copy .form.form2 .message {
+  color: green;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.wp-block-ctcb-click-to-copy .form.form3 .inputForm .subBtn {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.wp-block-ctcb-click-to-copy .form.form3 .copyTextForm3 {
+  padding: 0px !important;
+  margin-top: 20px;
+}
+.wp-block-ctcb-click-to-copy .form.form3 .message {
+  position: relative;
+  width: 150px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  background-color: green;
+  text-align: center;
+  padding: 2px;
+  margin-top: 15px;
+  margin: auto;
+  margin-top: 30px;
+}
+.wp-block-ctcb-click-to-copy .form.form3 .message::after {
+  content: "";
+  top: -2px;
+  left: 48px;
+  position: absolute;
+  transform: rotate(134deg);
+  border-top: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+.wp-block-ctcb-click-to-copy .form.form4 {
+  position: relative;
+}
+.wp-block-ctcb-click-to-copy .form.form4 .formMainArea {
+  position: relative;
+}
+.wp-block-ctcb-click-to-copy .form.form4 .formMainArea .content {
+  cursor: pointer;
+}
+.wp-block-ctcb-click-to-copy .form.form4 .formMainArea .content:hover + .hoverContent {
+  opacity: 1;
+}
+.wp-block-ctcb-click-to-copy .form.form4 .formMainArea .hoverContent {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: #fff;
+  padding: 2px 5px;
+  background: #000;
+}
+.wp-block-ctcb-click-to-copy .proBtn {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+  outline: none;
+  position: relative;
+  text-align: left;
+}
+.wp-block-ctcb-click-to-copy .proSymbleIcon, .wp-block-ctcb-click-to-copy .proCopyIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-ctcb-click-to-copy .proCopyIcon {
+  position: absolute;
+  top: 0; /* উপরে থেকে gap */
+  right: 0; /* ডান থেকে gap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=view.css.map*/
