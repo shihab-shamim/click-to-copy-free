@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Click to Copy
  * Description:       The Click To Copy Block plugin offers a seamless Gutenberg block for one-click content copying.
- * Version:           2.0.2
+ * Version:           2.0.3
  * Author:            bPlugins
  * Author URI:        http://bplugins.com
  * License:           GPLv3
@@ -21,7 +21,7 @@ if (function_exists('ctc_fs')) {
 } else {
 
     // Defined Constant
-    define('CTC_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === sanitize_text_field($_SERVER['HTTP_HOST']) ? time() : '2.0.2');
+    define('CTC_PLUGIN_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === sanitize_text_field($_SERVER['HTTP_HOST']) ? time() : '2.0.3');
     define('CTC_DIR_URL', plugin_dir_url(__FILE__));
     define('CTC_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
     define('CTC_DIR_PATH', plugin_dir_path(__FILE__));

@@ -4,12 +4,12 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: click to copy, copy to clipboard, one click copying, copy button , Gutenberg block
 Requires at least: 5.0+
 Tested up to: 7.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-The Click To Copy Block plugin offers a seamless Gutenberg block for one-click content copying .
+The Click To Copy Block plugin offers a seamless Gutenberg block for one-click content copying.
 
 == Description ==
 
@@ -162,6 +162,10 @@ You can post your questions on the [support forum here](https://wordpress.org/su
  
  
 == Changelog ==
+= 2.0.3 - 8 July, 2026 =
+* Added compatibility with WordPress 7.0
+* Minor UI improvements
+
 = 2.0.2 - 22 June, 2026 =
 *Added a modern and intuitive dashboard layout.;
 

@@ -168,6 +168,14 @@ export const welcomeInfo = (adminUrl = "") => ({
 
 	// Changelogs — each list item starts with <strong>Type:</strong> for badges
 	changelogs: [
+			{
+		version: "2.0.3 - 8 July, 2026",
+		type: "update",
+		list: [
+			"<strong>Update:</strong> Added compatibility with WordPress 7.0",
+			"<strong>Update:</strong> Minor UI improvements",
+		],
+	},
 		{
 			version: "2.0.2- 22 June, 2026",
 			type: "update",
